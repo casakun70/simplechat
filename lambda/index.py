@@ -127,7 +127,7 @@ async def invoke(request: Request):
 #        assistant_response = response_body['output']['message']['content'][0]['text']
         
         # アシスタントの応答を会話履歴に追加
-       messages.append({
+        messages.append({
             "role": "assistant",
             "content": assistant_response
         })
