@@ -186,3 +186,10 @@ async def invoke(request: Request):
 #                "error": str(error)
 #            })
 #        }
+if __name__ == "__main__":
+    # ngrokトンネルを作成して外部公開
+    public_url = ngrok.connect(8501)
+    print("ngrok public url:", public_url)
+
+    # FastAPI(Uvicorn)サーバーを起動
+    uvicorn.run(app, port=8501)
